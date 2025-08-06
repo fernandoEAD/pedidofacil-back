@@ -1,0 +1,11 @@
+com\pedidofacil\backend\entity\ProdutoPedido.class
+com\pedidofacil\backend\dto\PedidoDTO.class
+com\pedidofacil\backend\config\OpenApiConfig.class
+com\pedidofacil\backend\dto\ProdutoPedidoDTO.class
+com\pedidofacil\backend\controller\PedidoController.class
+com\pedidofacil\backend\repository\PedidoRepository.class
+com\pedidofacil\backend\entity\Pedido.class
+com\pedidofacil\backend\service\PedidoService.class
+com\pedidofacil\backend\config\DataLoader.class
+com\pedidofacil\backend\repository\ProdutoPedidoRepository.class
+com\pedidofacil\backend\PedidoFacilApplication.class
