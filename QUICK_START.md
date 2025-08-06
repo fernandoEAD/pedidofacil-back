@@ -52,10 +52,32 @@ cd frontend
 npm install -g @angular/cli@12
 ```
 
-### **Erro Node.js/Angular**
+### **🔥 Erro Node.js/Angular (ERR_OSSL_EVP_UNSUPPORTED)**
 ```bash
-# Já está configurado no package.json, mas se precisar manualmente:
-NODE_OPTIONS="--openssl-legacy-provider" ng serve
+# SOLUÇÃO 1 - Variável de ambiente (mais comum):
+# Windows (CMD):
+set NODE_OPTIONS=--openssl-legacy-provider && npm start
+
+# Windows (PowerShell):
+$env:NODE_OPTIONS="--openssl-legacy-provider"; npm start
+
+# Linux/Mac:
+NODE_OPTIONS="--openssl-legacy-provider" npm start
+
+# SOLUÇÃO 2 - Adicionar no package.json:
+# No arquivo frontend/package.json, na seção "scripts":
+"start": "NODE_OPTIONS=--openssl-legacy-provider ng serve",
+"build": "NODE_OPTIONS=--openssl-legacy-provider ng build"
+```
+
+### **🚨 Erro Backend - UnsupportedOperationException**
+```bash
+# Se erro "UnsupportedOperationException" nos testes:
+cd backend
+mvn clean test
+
+# Se persistir, pode ser problema no código dos testes.
+# Verifique se usa Arrays.asList() que é imutável.
 ```
 
 ### **Erro PostgreSQL**
@@ -102,6 +124,9 @@ cd backend && mvn clean compile
 # Executar testes:
 cd backend && mvn test
 cd frontend && npm test
+
+# Gerar JAR (para produção):
+cd backend && mvn clean package -DskipTests=false
 ```
 
 ## ✅ **Teste Rápido:**

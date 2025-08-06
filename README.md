@@ -325,6 +325,39 @@ Este projeto está sob a licença MIT. Veja o arquivo `LICENSE` para mais detalh
 
 - **Equipe PedidoFácil** - *Desenvolvimento inicial* - [PedidoFacil](https://github.com/pedidofacil)
 
+## 🚨 Problemas Comuns
+
+### **Erro Backend - UnsupportedOperationException**
+```bash
+# Se aparecer erro nos testes:
+# "UnsupportedOperationException at java.base/java.util.AbstractList.clear"
+
+# Causa: Arrays.asList() retorna lista imutável
+# Solução aplicada: usar new ArrayList<>(Arrays.asList(...))
+
+# Para testar se foi corrigido:
+cd backend && mvn test
+```
+
+### **Erro Frontend - ERR_OSSL_EVP_UNSUPPORTED**
+```bash
+# Erro comum com Node.js 17+ e Angular 12
+
+# Windows (CMD):
+set NODE_OPTIONS=--openssl-legacy-provider && npm start
+
+# Windows (PowerShell):
+$env:NODE_OPTIONS="--openssl-legacy-provider"; npm start
+
+# Linux/Mac:
+NODE_OPTIONS="--openssl-legacy-provider" npm start
+
+# Ou adicionar no package.json:
+"scripts": {
+  "start": "NODE_OPTIONS=--openssl-legacy-provider ng serve"
+}
+```
+
 ## 🆘 Suporte
 
 Para suporte, envie um email para contato@pedidofacil.com ou abra uma issue no GitHub.

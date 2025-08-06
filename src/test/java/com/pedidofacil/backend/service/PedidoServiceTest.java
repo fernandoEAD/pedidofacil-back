@@ -51,7 +51,7 @@ class PedidoServiceTest {
         produto.setValorTotalProduto(new BigDecimal("800.00"));
         produto.setPedido(pedidoMock);
 
-        pedidoMock.setProdutos(Arrays.asList(produto));
+        pedidoMock.setProdutos(new ArrayList<>(Arrays.asList(produto)));
 
         // Criar mock de DTO
         pedidoDTOMock = new PedidoDTO();
@@ -67,7 +67,7 @@ class PedidoServiceTest {
         produtoDTO.setQuantidadeComprada(1);
         produtoDTO.setValorTotalProduto(new BigDecimal("800.00"));
 
-        pedidoDTOMock.setProdutos(Arrays.asList(produtoDTO));
+        pedidoDTOMock.setProdutos(new ArrayList<>(Arrays.asList(produtoDTO)));
     }
 
     @Test
