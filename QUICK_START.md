@@ -28,6 +28,7 @@ mvn spring-boot:run
 ### 3️⃣ **Frontend Angular**
 ```bash
 # Terminal 2 - Frontend (NOVA ABA/JANELA)
+# Versão do node tem que ser a 14
 cd frontend
 npm install -g @angular/cli@12
 npm install
