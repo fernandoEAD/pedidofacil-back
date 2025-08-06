@@ -27,6 +27,10 @@ mvn spring-boot:run
 ```bash
 # Terminal 2 - Frontend (NOVA ABA/JANELA)
 cd frontend
+npm install -g @angular/cli@12
+npm install
+ng s
+ou
 npm start
 
 # ✅ Frontend rodando: http://localhost:4200
