@@ -1,0 +1,21 @@
+
+version: '3.8'
+
+services:
+  app:
+    build: .
+    ports:
+      - "8080:8080"
+    depends_on:
+      - postgres
+    environment:
+      - SPRING_PROFILES_ACTIVE=postgresql
+
+  postgres:
+    image: postgres:latest
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_DB=pedidofacil
+      - POSTGRES_USER=pedidofacil_user
+      - POSTGRES_PASSWORD=pedidofacil123
