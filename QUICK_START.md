@@ -18,6 +18,8 @@ GRANT ALL PRIVILEGES ON DATABASE pedidofacil TO pedidofacil_user;
 # Terminal 1 - Backend
 cd backend
 mvn spring-boot:run
+#se n tiver o mvn
+./mvnw spring-boot:run
 
 # ✅ Backend rodando: http://localhost:8080
 # ✅ Swagger: http://localhost:8080/swagger-ui.html
@@ -30,7 +32,7 @@ cd frontend
 npm install -g @angular/cli@12
 npm install
 ng s
-ou
+#ou
 npm start
 
 # ✅ Frontend rodando: http://localhost:4200
